@@ -1,6 +1,6 @@
 class Node
 
-  attr_reader :surname, :next_node
+  attr_accessor :surname, :next_node
 
   def initialize(surname)
     @surname = surname
