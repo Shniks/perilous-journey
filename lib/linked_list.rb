@@ -1,4 +1,5 @@
 require './lib/node'
+require 'pry'
 
 class LinkedList
 

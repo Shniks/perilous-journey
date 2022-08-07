@@ -2,6 +2,7 @@ require 'simplecov'
 SimpleCov.start
 require './spec/spec_helper'
 require './lib/linked_list'
+require 'pry'
 
 RSpec.describe LinkedList do
 
@@ -20,8 +21,13 @@ RSpec.describe LinkedList do
   it 'can append a node' do
     @list.append("West")
 
+    expect(@list.head).to be_a Node
     expect(@list.head.surname).to eq("West")
     expect(@list.head.next_node).to eq(nil)
+  end
+
+  it 'can count all the nodes in the list' do 
+    expect(@list.count).to eq(1)
   end
 
 end
