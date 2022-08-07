@@ -134,7 +134,6 @@ Update your `append`, `count`, and `to_s` methods to support the following inter
 => 2
 > list.to_string
 => "The Rhodes family, followed by the Hardy family"
-=> "doop deep"
 ```
 
 Notice the key point here – the first piece of data we append becomes the Head, while the second becomes the Next Node of that (Head) node.
