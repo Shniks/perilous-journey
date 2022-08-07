@@ -10,4 +10,11 @@ RSpec.describe Node do
 
     expect(node).to be_a Node
   end
-end 
+
+  it 'should be have attributes' do
+    node = Node.new("Burke")
+
+    expect(node.surname).to eq("Burke")
+    expect(node.next_node).to be nil
+  end
+end
