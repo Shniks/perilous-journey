@@ -21,6 +21,7 @@ class LinkedList
 
   def append_node_if_head_nil(surname)
     @head = Node.new(surname)
+    @string = "The #{head.surname} family"
   end
 
   def append_node_if_head_not_nil(surname)
@@ -41,14 +42,11 @@ class LinkedList
 
   def insert_node_after_current_node(current_node, surname)
     current_node.next_node = Node.new(surname)
+    @string += ", followed by the #{current_node.next_node.surname} family"
   end
 
   def to_string
-    if @head.next_node.nil?
-      @s = "The #{head.surname} family"
-    else
-      @s += ", followed by the #{@current_node.next_node.surname} family"
-    end
+    @string
   end
 
 end
