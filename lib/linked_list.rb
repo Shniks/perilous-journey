@@ -1,4 +1,9 @@
 class LinkedList
 
+    attr_reader :head
 
-end 
+  def initialize
+    @head = nil
+  end
+
+end
