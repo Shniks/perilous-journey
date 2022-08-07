@@ -15,4 +15,8 @@ class LinkedList
     @count += 1
   end
 
+  def to_string
+    "The #{@head.surname} family"
+  end
+
 end
