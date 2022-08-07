@@ -5,7 +5,7 @@ require './lib/linked_list'
 
 RSpec.describe LinkedList do
   it 'is an instance of an object' do
-    list = Linkedlist.new
+    list = LinkedList.new
 
     expect(list).to be_a LinkedList
   end
