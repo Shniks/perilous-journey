@@ -38,7 +38,7 @@ RSpec.describe LinkedList do
     expect(@list.to_string).to eq("The West family")
   end
 
-  it 'can append, to_string and count for multiple nodes' do
+  it 'can append, to_string and count for two nodes' do
     @list.append("Rhodes")
 
     expect(@list.head.surname).to eq("Rhodes")
@@ -51,6 +51,20 @@ RSpec.describe LinkedList do
     expect(@list.head.next_node.next_node).to eq(nil)
     expect(@list.count).to eq(2)
     expect(@list.to_string).to eq("The Rhodes family, followed by the Hardy family")
+  end
+
+  it 'can append, to_string and count for four nodes' do
+    @list.append("Rhodes")
+
+    expect(@list.head.surname).to eq("Rhodes")
+    expect(@list.head.next_node).to eq(nil)
+
+    @list.append("Hardy")
+    @list.append("Powell")
+    @list.append("McConnell")
+
+    expect(@list.count).to eq(4)
+    expect(@list.to_string).to eq("The Rhodes family, followed by the Hardy family, followed by the Powell family, followed by the McConnell family")
   end
 
 end
