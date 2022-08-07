@@ -26,7 +26,8 @@ RSpec.describe LinkedList do
     expect(@list.head.next_node).to eq(nil)
   end
 
-  it 'can count all the nodes in the list' do 
+  it 'can count all the nodes in the list' do
+    @list.append("West")
     expect(@list.count).to eq(1)
   end
 
