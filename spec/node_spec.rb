@@ -2,7 +2,6 @@ require 'simplecov'
 SimpleCov.start
 require './spec/spec_helper'
 require './lib/node'
-require 'pry'
 
 RSpec.describe Node do
   it 'should be an instance of an object' do
@@ -17,4 +16,5 @@ RSpec.describe Node do
     expect(node.surname).to eq("Burke")
     expect(node.next_node).to be nil
   end
+
 end
