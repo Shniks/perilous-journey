@@ -28,7 +28,14 @@ RSpec.describe LinkedList do
 
   it 'can count all the nodes in the list' do
     @list.append("West")
+
     expect(@list.count).to eq(1)
+  end
+
+  it 'can generate a string of all elements in the list' do
+    @list.append("West")
+
+    expect(@list.to_string).to eq("The West family")
   end
 
 end
