@@ -70,6 +70,7 @@ class LinkedList
     insert_string(surname, position)
     current_node = head
     insert_traverse(position, current_node)
+    insert_the_node(surname, current_node)
   end
 
   def insert_traverse(position, current_node)
