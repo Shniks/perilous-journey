@@ -69,14 +69,14 @@ class LinkedList
     @count += 1
     insert_string(surname, position)
     current_node = head
-    insert_traverse(position, current_node)
-    insert_the_node(surname, current_node)
+    insert_traverse(position, current_node, surname)
   end
 
-  def insert_traverse(position, current_node)
+  def insert_traverse(position, current_node, surname)
     (position - 1).times do
       current_node = current_node.next_node
     end
+    insert_the_node(surname, current_node)
   end
 
   def insert_the_node(surname, current_node)
