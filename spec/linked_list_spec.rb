@@ -67,4 +67,13 @@ RSpec.describe LinkedList do
     expect(@list.to_string).to eq("The Rhodes family, followed by the Hardy family, followed by the Powell family, followed by the McConnell family")
   end
 
+  it 'can prepend a node to the beginning of the list' do
+    @list.append("Brooks")
+    @list.append("Henderson")
+    @list.prepend("McKinney")
+
+    expect(@list.count).to eq(3)
+    expect(@list.to_string).to eq("The McKinney family, followed by the Brooks family, followed by the Henderson family")
+  end
+
 end
