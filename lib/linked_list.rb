@@ -65,4 +65,22 @@ class LinkedList
     @string = "The #{surname} family" + @string.gsub("The", ", followed by the")
   end
 
+  def insert(position, surname)
+    @count += 1
+    current_node = head
+    insert_traverse(position, current_node)
+  end
+
+  def insert_traverse(position, current_node)
+    (position - 1).times do
+      current_node = current_node.next_node
+    end
+  end
+
+  def insert_the_node(surname, current_node)
+    inserted_node = Node.new(surname)
+    inserted_node.next_node = current_node.next_node
+    current_node.next_node = inserted_node
+  end
+
 end
