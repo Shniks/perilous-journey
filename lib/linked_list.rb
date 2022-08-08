@@ -67,7 +67,6 @@ class LinkedList
 
   def insert(position, surname)
     @count += 1
-    insert_string(surname, position)
     current_node = head
     insert_traverse(position, current_node, surname)
   end
@@ -76,11 +75,12 @@ class LinkedList
     (position - 1).times do
       current_node = current_node.next_node
     end
-    insert_the_node(surname, current_node)
+    insert_the_node(surname, current_node, position)
   end
 
-  def insert_the_node(surname, current_node)
+  def insert_the_node(surname, current_node, position)
     inserted_node = Node.new(surname)
+    insert_string(surname, position)
     inserted_node.next_node = current_node.next_node
     current_node.next_node = inserted_node
   end
