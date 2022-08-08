@@ -76,6 +76,8 @@ RSpec.describe LinkedList do
     expect(@list.to_string).to eq("The McKinney family, followed by the Brooks family, followed by the Henderson family")
 
     @list.prepend("Rhodes")
+
+    expect(@list.count).to eq(4)
     expect(@list.to_string).to eq("The Rhodes family, followed by the McKinney family, followed by the Brooks family, followed by the Henderson family")
   end
 
