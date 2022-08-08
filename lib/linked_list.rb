@@ -67,6 +67,7 @@ class LinkedList
 
   def insert(position, surname)
     @count += 1
+    insert_string(surname, position)
     current_node = head
     insert_traverse(position, current_node)
   end
@@ -81,6 +82,10 @@ class LinkedList
     inserted_node = Node.new(surname)
     inserted_node.next_node = current_node.next_node
     current_node.next_node = inserted_node
+  end
+
+  def insert_string(surname, position)
+    @string = @string.split(",").insert((position), " followed by the #{surname} family").join(",")
   end
 
 end
