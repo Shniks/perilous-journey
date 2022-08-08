@@ -49,4 +49,16 @@ class LinkedList
     @string
   end
 
+  def prepend(surname)
+    prepend_string(surname)
+    @count += 1
+    current_head = @head
+    @head = Node.new(surname)
+    head.next_node = current_head
+  end
+
+  def prepend_string(surname)
+    @string = "The #{surname} family" + @string.gsub("The", ", followed by the")
+  end
+
 end
