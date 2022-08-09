@@ -89,4 +89,25 @@ class LinkedList
     @string = @string.split(",").insert((position), " followed by the #{surname} family").join(",")
   end
 
+  def find(position, number)
+    current_node = head
+    find_traverse(position, current_node, number)
+  end
+
+  def find_traverse(position, current_node, number)
+    (position).times do
+      current_node = current_node.next_node
+    end
+    find_string(current_node, number)
+  end
+
+  def find_string(current_node, number)
+    string = "The #{current_node.surname} family"
+    (number - 1).times do
+      current_node = current_node.next_node
+      string += ", followed by the #{current_node.surname} family"
+    end
+    string
+  end
+
 end
