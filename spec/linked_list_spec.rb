@@ -125,4 +125,14 @@ RSpec.describe LinkedList do
     expect(@list.includes?("Lawson")).to eq(true)
   end
 
+  it 'can find pop elements from the list' do
+    @list.append("Brooks")
+    @list.append("Henderson")
+    @list.prepend("McKinney")
+    @list.insert(1, "Lawson")
+
+    expect{@list.pop}.to output("The Henderson family has died of dysentery").to_stdout
+    expect(@list.pop).to be_a Node
+  end
+
 end
