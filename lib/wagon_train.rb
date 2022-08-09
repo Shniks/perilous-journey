@@ -6,4 +6,8 @@ class WagonTrain
     @list = LinkedList.new
   end
 
+  def append(surname)
+    list.append(surname)
+  end
+
 end
