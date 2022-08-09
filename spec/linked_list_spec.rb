@@ -132,7 +132,7 @@ RSpec.describe LinkedList do
     @list.insert(1, "Lawson")
 
     expect{@list.pop}.to output("The Henderson family has died of dysentery").to_stdout
-    expect(@list.pop).to be_a Node
+    expect{@list.pop}.to output("The Brooks family has died of dysentery").to_stdout
     expect(@list.to_string).to eq("The McKinney family, followed by the Lawson family")
   end
 
