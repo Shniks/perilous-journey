@@ -120,6 +120,9 @@ RSpec.describe LinkedList do
 
     expect(@list.includes?("Brooks")).to eq(true)
     expect(@list.includes?("Chapman")).to eq(false)
+    expect(@list.includes?("Henderson")).to eq(true)
+    expect(@list.includes?("McKinney")).to eq(true)
+    expect(@list.includes?("Lawson")).to eq(true)
   end
 
 end
