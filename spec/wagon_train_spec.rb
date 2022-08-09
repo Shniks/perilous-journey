@@ -26,4 +26,12 @@ RSpec.describe WagonTrain do
     expect(wt.list.head.surname).to eq("Burke")
   end
 
+  it 'can append a second node' do
+    wt = WagonTrain.new
+    wt.append("Burke")
+
+    expect(wt.append("West")).to be_a Node
+    expect(wt.count).to eq(2)
+  end
+
 end
