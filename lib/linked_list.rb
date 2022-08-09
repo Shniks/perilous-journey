@@ -139,6 +139,7 @@ class LinkedList
     print "The #{current_node.next_node.surname} family has died of dysentery"
     target = current_node.next_node
     current_node.next_node = nil
+    @count -= 1
     pop_string
     target
   end
