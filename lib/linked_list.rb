@@ -112,7 +112,7 @@ class LinkedList
 
   def includes?(surname)
     current_node = head
-    while !current_node.next_node.nil?
+    while !current_node.nil?
       return true if current_node.surname == surname
       current_node = current_node.next_node
     end
