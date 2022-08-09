@@ -16,6 +16,7 @@ RSpec.describe WagonTrain do
     wt = WagonTrain.new
 
     expect(wt.list).to be_a LinkedList
-  end 
+    expect(wt.list.head).to eq(nil)
+  end
 
 end
