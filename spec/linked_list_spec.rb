@@ -112,4 +112,14 @@ RSpec.describe LinkedList do
     expect(@list.find(1, 3)).to eq("The Lawson family, followed by the Brooks family, followed by the Henderson family")
   end
 
+  it 'can find check to see if a node is in the list' do
+    @list.append("Brooks")
+    @list.append("Henderson")
+    @list.prepend("McKinney")
+    @list.insert(1, "Lawson")
+
+    expect(@list.includes?("Brooks")).to eq(true)
+    expect(@list.includes?("Chapman")).to eq(false)
+  end
+
 end
