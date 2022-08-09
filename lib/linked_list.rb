@@ -34,14 +34,10 @@ class LinkedList
   end
 
   def append_traverse(current_node, surname)
-    append_traverse_if_next_node_not_nil(current_node)
-    insert_node_after_current_node(current_node, surname)
-  end
-
-  def append_traverse_if_next_node_not_nil(current_node)
     while current_node.next_node != nil
       current_node = current_node.next_node
     end
+    insert_node_after_current_node(current_node, surname)
   end
 
   def insert_node_after_current_node(current_node, surname)
@@ -125,6 +121,25 @@ class LinkedList
       current_node = current_node.next_node
     end
     false
+  end
+
+  def pop
+    current_node = head
+    pop_traverse(current_node)
+  end
+
+  def pop_traverse(current_node)
+    while !current_node.next_node.next_node.nil?
+      current_node = current_node.next_node
+    end
+    pop_outputs(current_node)
+  end
+
+  def pop_outputs(current_node)
+    print "The #{current_node.next_node.surname} family has died of dysentery"
+    target = current_node.next_node
+    current_node.next_node = nil
+    target
   end
 
 end
