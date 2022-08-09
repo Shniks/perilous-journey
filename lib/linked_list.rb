@@ -125,7 +125,19 @@ class LinkedList
 
   def pop
     current_node = head
+    pop_count
+    pop_string
     pop_traverse(current_node)
+  end
+
+  def pop_count
+    @count -= 1
+  end
+
+  def pop_string
+    @string = @string.split(",")
+    @string.pop
+    @string = @string.join(",")
   end
 
   def pop_traverse(current_node)
@@ -137,17 +149,13 @@ class LinkedList
 
   def pop_outputs(current_node)
     print "The #{current_node.next_node.surname} family has died of dysentery"
-    target = current_node.next_node
-    current_node.next_node = nil
-    @count -= 1
-    pop_string
-    target
+    pop_delete_node(current_node)
   end
 
-  def pop_string
-    @string = @string.split(",")
-    @string.pop
-    @string = @string.join(",")
+  def pop_delete_node(current_node)
+    target = current_node.next_node
+    current_node.next_node = nil
+    target
   end
 
 end
