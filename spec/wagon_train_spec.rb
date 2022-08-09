@@ -19,4 +19,11 @@ RSpec.describe WagonTrain do
     expect(wt.list.head).to eq(nil)
   end
 
+  it 'can append a node' do
+    wt = WagonTrain.new
+
+    expect(wt.append("Burke")).to be_a Node
+    expect(wt.list.head.surname).to eq("Burke")
+  end
+
 end
