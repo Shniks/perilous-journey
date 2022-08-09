@@ -139,7 +139,14 @@ class LinkedList
     print "The #{current_node.next_node.surname} family has died of dysentery"
     target = current_node.next_node
     current_node.next_node = nil
+    pop_string
     target
+  end
+
+  def pop_string
+    @string = @string.split(",")
+    @string.pop
+    @string = @string.join(",")
   end
 
 end
