@@ -135,9 +135,7 @@ class LinkedList
   end
 
   def pop_string
-    @string = @string.split(",")
-    @string.pop
-    @string = @string.join(",")
+    @string = @string.split(",")[0..-2].join(",")
   end
 
   def pop_traverse(current_node)
