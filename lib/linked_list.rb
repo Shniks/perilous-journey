@@ -20,8 +20,12 @@ class LinkedList
   end
 
   def append_node_if_head_nil(surname)
-    @string = "The #{surname} family"
+    first_string(surname)
     @head = Node.new(surname)
+  end
+
+  def first_string(surname)
+    @string = "The #{surname} family"
   end
 
   def append_node_if_head_not_nil(surname)
@@ -41,8 +45,12 @@ class LinkedList
   end
 
   def insert_node_after_current_node(current_node, surname)
-    @string += ", followed by the #{surname} family"
+    rest_of_the_string(surname)
     current_node.next_node = Node.new(surname)
+  end
+
+  def rest_of_the_string(surname)
+    @string += ", followed by the #{surname} family"
   end
 
   def to_string
@@ -102,12 +110,12 @@ class LinkedList
   end
 
   def find_string(current_node, number)
-    string = "The #{current_node.surname} family"
+    first_string(current_node.surname)
     (number - 1).times do
       current_node = current_node.next_node
-      string += ", followed by the #{current_node.surname} family"
+      rest_of_the_string(current_node.surname)
     end
-    string
+    to_string
   end
 
   def includes?(surname)
