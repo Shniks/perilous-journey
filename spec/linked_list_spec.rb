@@ -70,21 +70,21 @@ RSpec.describe LinkedList do
     expect(@list.count).to eq(4)
     expect(@list.to_string).to eq("The Rhodes family, followed by the Hardy family, followed by the Powell family, followed by the McConnell family")
   end
-  #
-  # it 'can prepend a node to the beginning of the list' do
-  #   @list.append("Brooks")
-  #   @list.append("Henderson")
-  #   @list.prepend("McKinney")
-  #
-  #   expect(@list.count).to eq(3)
-  #   expect(@list.to_string).to eq("The McKinney family, followed by the Brooks family, followed by the Henderson family")
-  #
-  #   @list.prepend("Rhodes")
-  #
-  #   expect(@list.count).to eq(4)
-  #   expect(@list.to_string).to eq("The Rhodes family, followed by the McKinney family, followed by the Brooks family, followed by the Henderson family")
-  # end
-  #
+
+  it 'can prepend a node to the beginning of the list' do
+    @list.append("Brooks", {"pounds of food" => 200})
+    @list.append("Henderson", {"pounds of food" => 300})
+    @list.prepend("McKinney", {"pounds of food" => 250})
+
+    expect(@list.count).to eq(3)
+    expect(@list.to_string).to eq("The McKinney family, followed by the Brooks family, followed by the Henderson family")
+
+    @list.prepend("Rhodes", {"pounds of food" => 100})
+
+    expect(@list.count).to eq(4)
+    expect(@list.to_string).to eq("The Rhodes family, followed by the McKinney family, followed by the Brooks family, followed by the Henderson family")
+  end
+
   # it 'can insert a node to the the list' do
   #   @list.append("Brooks")
   #   @list.append("Henderson")
