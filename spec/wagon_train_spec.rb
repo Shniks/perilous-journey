@@ -54,4 +54,13 @@ RSpec.describe WagonTrain do
     expect(wt.count).to eq(3)
   end
 
+  it 'can list all supplies' do
+    wt = WagonTrain.new
+    wt.append("Burke", {"pounds of food" => 200})
+    wt.list.prepend("Hardy", {"spare wagon tongues" => 3})
+    wt.list.insert(1, "West", {"pounds of food" => 300})
+
+    expect(wt.supplies).to eq({"spare wagon tongues" => 3, "pounds of food" => 500})
+  end
+
 end
