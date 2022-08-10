@@ -85,27 +85,27 @@ RSpec.describe LinkedList do
     expect(@list.to_string).to eq("The Rhodes family, followed by the McKinney family, followed by the Brooks family, followed by the Henderson family")
   end
 
-  # it 'can insert a node to the the list' do
-  #   @list.append("Brooks")
-  #   @list.append("Henderson")
-  #   @list.prepend("McKinney")
-  #   @list.insert(1, "Lawson")
-  #
-  #   expect(@list.count).to eq(4)
-  #   expect(@list.to_string).to eq("The McKinney family, followed by the Lawson family, followed by the Brooks family, followed by the Henderson family")
-  # end
-  #
-  # it 'can insert a second node to the the list' do
-  #   @list.append("Brooks")
-  #   @list.append("Henderson")
-  #   @list.prepend("McKinney")
-  #   @list.insert(1, "Lawson")
-  #   @list.insert(3, "Rhodes")
-  #
-  #   expect(@list.count).to eq(5)
-  #   expect(@list.to_string).to eq("The McKinney family, followed by the Lawson family, followed by the Brooks family, followed by the Rhodes family, followed by the Henderson family")
-  # end
-  #
+  it 'can insert a node to the the list' do
+    @list.append("Brooks", {"pounds of food" => 200})
+    @list.append("Henderson", {"pounds of food" => 300})
+    @list.prepend("McKinney", {"pounds of food" => 250})
+    @list.insert(1, "Lawson", {"pounds of food" => 100})
+
+    expect(@list.count).to eq(4)
+    expect(@list.to_string).to eq("The McKinney family, followed by the Lawson family, followed by the Brooks family, followed by the Henderson family")
+  end
+
+  it 'can insert a second node to the the list' do
+    @list.append("Brooks", {"pounds of food" => 200})
+    @list.append("Henderson", {"pounds of food" => 300})
+    @list.prepend("McKinney", {"pounds of food" => 250})
+    @list.insert(1, "Lawson", {"pounds of food" => 100})
+    @list.insert(3, "Rhodes", {"pounds of food" => 400})
+
+    expect(@list.count).to eq(5)
+    expect(@list.to_string).to eq("The McKinney family, followed by the Lawson family, followed by the Brooks family, followed by the Rhodes family, followed by the Henderson family")
+  end
+
   # it 'can find a one or more nodes in the list' do
   #   @list.append("Brooks")
   #   @list.append("Henderson")
