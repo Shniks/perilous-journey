@@ -1,4 +1,3 @@
-require 'pry'
 class WagonTrain
 
   attr_reader :list
