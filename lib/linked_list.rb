@@ -53,15 +53,15 @@ class LinkedList
     @string
   end
 
-  def prepend(surname)
+  def prepend(surname, supplies)
     prepend_string(surname)
     @count += 1
-    prepend_insert_node(surname)
+    prepend_insert_node(surname, supplies)
   end
 
-  def prepend_insert_node(surname)
+  def prepend_insert_node(surname, supplies)
     current_head = @head
-    @head = Node.new(surname)
+    @head = Node.new(surname, supplies)
     head.next_node = current_head
   end
 
