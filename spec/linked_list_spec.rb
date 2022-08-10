@@ -106,38 +106,38 @@ RSpec.describe LinkedList do
     expect(@list.to_string).to eq("The McKinney family, followed by the Lawson family, followed by the Brooks family, followed by the Rhodes family, followed by the Henderson family")
   end
 
-  # it 'can find a one or more nodes in the list' do
-  #   @list.append("Brooks")
-  #   @list.append("Henderson")
-  #   @list.prepend("McKinney")
-  #   @list.insert(1, "Lawson")
-  #
-  #   expect(@list.find(2, 1)).to eq("The Brooks family")
-  #   expect(@list.find(1, 3)).to eq("The Lawson family, followed by the Brooks family, followed by the Henderson family")
-  # end
-  #
-  # it 'can find check to see if a node is in the list' do
-  #   @list.append("Brooks")
-  #   @list.append("Henderson")
-  #   @list.prepend("McKinney")
-  #   @list.insert(1, "Lawson")
-  #
-  #   expect(@list.includes?("Brooks")).to eq(true)
-  #   expect(@list.includes?("Chapman")).to eq(false)
-  #   expect(@list.includes?("Henderson")).to eq(true)
-  #   expect(@list.includes?("McKinney")).to eq(true)
-  #   expect(@list.includes?("Lawson")).to eq(true)
-  # end
-  #
-  # it 'can find pop elements from the list' do
-  #   @list.append("Brooks")
-  #   @list.append("Henderson")
-  #   @list.prepend("McKinney")
-  #   @list.insert(1, "Lawson")
-  #
-  #   expect{@list.pop}.to output("The Henderson family has died of dysentery").to_stdout
-  #   expect{@list.pop}.to output("The Brooks family has died of dysentery").to_stdout
-  #   expect(@list.to_string).to eq("The McKinney family, followed by the Lawson family")
-  # end
+  it 'can find one or more nodes in the list' do
+    @list.append("Brooks", {"pounds of food" => 200})
+    @list.append("Henderson", {"pounds of food" => 300})
+    @list.prepend("McKinney", {"pounds of food" => 250})
+    @list.insert(1, "Lawson", {"pounds of food" => 100})
+
+    expect(@list.find(2, 1)).to eq("The Brooks family")
+    expect(@list.find(1, 3)).to eq("The Lawson family, followed by the Brooks family, followed by the Henderson family")
+  end
+
+  it 'can check to see if a node is in the list' do
+    @list.append("Brooks", {"pounds of food" => 200})
+    @list.append("Henderson", {"pounds of food" => 300})
+    @list.prepend("McKinney", {"pounds of food" => 250})
+    @list.insert(1, "Lawson", {"pounds of food" => 100})
+
+    expect(@list.includes?("Brooks")).to eq(true)
+    expect(@list.includes?("Chapman")).to eq(false)
+    expect(@list.includes?("Henderson")).to eq(true)
+    expect(@list.includes?("McKinney")).to eq(true)
+    expect(@list.includes?("Lawson")).to eq(true)
+  end
+
+  it 'can pop elements from the list' do
+    @list.append("Brooks", {"pounds of food" => 200})
+    @list.append("Henderson", {"pounds of food" => 300})
+    @list.prepend("McKinney", {"pounds of food" => 250})
+    @list.insert(1, "Lawson", {"pounds of food" => 100})
+
+    expect{@list.pop}.to output("The Henderson family has died of dysentery").to_stdout
+    expect{@list.pop}.to output("The Brooks family has died of dysentery").to_stdout
+    expect(@list.to_string).to eq("The McKinney family, followed by the Lawson family")
+  end
 
 end
