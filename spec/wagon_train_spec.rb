@@ -22,15 +22,16 @@ RSpec.describe WagonTrain do
   it 'can append a node' do
     wt = WagonTrain.new
 
-    expect(wt.append("Burke")).to be_a Node
+    expect(wt.append("Burke", {"pounds of food" => 200})).to be_a Node
     expect(wt.list.head.surname).to eq("Burke")
+    expect(wt.list.head.supplies).to eq({"pounds of food" => 200})
   end
 
   it 'can append a second node' do
     wt = WagonTrain.new
-    wt.append("Burke")
+    wt.append("Burke", {"pounds of food" => 200})
 
-    expect(wt.append("West")).to be_a Node
+    expect(wt.append("West", {"pounds of food" => 300})).to be_a Node
     expect(wt.count).to eq(2)
   end
 
