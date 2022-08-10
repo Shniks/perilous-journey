@@ -35,4 +35,23 @@ RSpec.describe WagonTrain do
     expect(wt.count).to eq(2)
   end
 
+  it 'can prepend a node' do
+    wt = WagonTrain.new
+    wt.append("Burke", {"pounds of food" => 200})
+
+    expect(wt.list.prepend("Hardy", {"spare wagon tongues" => 3})).to be_a Node
+    expect(wt.list.head.surname).to eq("Hardy")
+    expect(wt.list.head.supplies).to eq({"spare wagon tongues" => 3})
+    expect(wt.count).to eq(2)
+  end
+
+  it 'can insert a node' do
+    wt = WagonTrain.new
+    wt.append("Burke", {"pounds of food" => 200})
+    wt.list.prepend("Hardy", {"spare wagon tongues" => 3})
+
+    expect(wt.list.insert(1, "West", {"pounds of food" => 300})).to be_a Node
+    expect(wt.count).to eq(3)
+  end
+
 end
