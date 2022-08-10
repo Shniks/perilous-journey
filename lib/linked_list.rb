@@ -10,39 +10,39 @@ class LinkedList
     @count = 0
   end
 
-  def append(surname)
+  def append(surname, supplies)
     @count += 1
     if head.nil?
-      append_node_if_head_nil(surname)
+      append_node_if_head_nil(surname, supplies)
     else
-      append_node_if_head_not_nil(surname)
+      append_node_if_head_not_nil(surname, supplies)
     end
   end
 
-  def append_node_if_head_nil(surname)
+  def append_node_if_head_nil(surname, supplies)
     first_string(surname)
-    @head = Node.new(surname)
+    @head = Node.new(surname, supplies)
   end
 
   def first_string(surname)
     @string = "The #{surname} family"
   end
 
-  def append_node_if_head_not_nil(surname)
+  def append_node_if_head_not_nil(surname, supplies)
     current_node = head
-    append_traverse(current_node, surname)
+    append_traverse(current_node, surname, supplies)
   end
 
-  def append_traverse(current_node, surname)
+  def append_traverse(current_node, surname, supplies)
     while current_node.next_node != nil
       current_node = current_node.next_node
     end
-    insert_node_after_current_node(current_node, surname)
+    insert_node_after_current_node(current_node, surname, supplies)
   end
 
-  def insert_node_after_current_node(current_node, surname)
+  def insert_node_after_current_node(current_node, surname, supplies)
     rest_of_the_string(surname)
-    current_node.next_node = Node.new(surname)
+    current_node.next_node = Node.new(surname, supplies)
   end
 
   def rest_of_the_string(surname)
